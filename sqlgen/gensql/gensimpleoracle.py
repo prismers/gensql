@@ -1,5 +1,6 @@
+from sqlgen.utilities.utility import getSelectWithColAndTable, getAddWhereToSelect, getWhereWithColAndValue, \
+    extractValue
 from sqlgen.utilities.utility import prettyformat
-from sqlgen.utilities.utility import getSelectWithColAndTable, getAddWhereToSelect, getWhereWithColAndValue, extractValue
 
 
 def verifyEveryRow(values, types, db='mysql'):
@@ -17,7 +18,7 @@ def verifyEveryRow(values, types, db='mysql'):
                 if db == 'mysql':
                     if t is DataType.FLOAT or t is DataType.DOUBLE:
                         continue
-                
+
                 selectcol = getSelectWithColAndTable([i], [tid])
 
                 v = extractValue(col)

@@ -88,6 +88,7 @@ class BiOpSimilar(Enum):
     # NEQ = '=!'
     LT = '<='
     GT = '>='
+
     # LTE = '>='
     # GTE = '<='
     # NSEQ = '<=>'
@@ -113,6 +114,7 @@ class BiOpSwap(Enum):
 
     def __str__(self):
         return self.name
+
 
 class BiOpReverse(Enum):
     EQ = '<>'
@@ -157,6 +159,7 @@ class LogicOperatorType(Enum):
     OR = 'OR'
     AND = 'AND'
     XOR = 'XOR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 
@@ -171,6 +174,7 @@ class LogicOperatorReverse(Enum):
     OR = 'OR 1 OR'
     AND = 'OR 1 OR'
     XOR = 'XOR 1 OR 1 OR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 

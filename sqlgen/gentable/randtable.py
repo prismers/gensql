@@ -1,8 +1,8 @@
 import random
 
-
-from .genindex import genOneIndex
 from sqlgen.utilities.utility import extractValue
+from .genindex import genOneIndex
+
 
 class TableGenerator:
 
@@ -44,7 +44,7 @@ class TableGenerator:
                     col += ' {}'.format(t.describe())
 
             if self.db == 'mysql':
-                if t is DataType.CHAR or t is DataType.VARCHAR or t is\
+                if t is DataType.CHAR or t is DataType.VARCHAR or t is \
                         DataType.BINARY or t is DataType.VARBINARY:
                     col += ' {}({})'.format(t.describe(), str(v[0]))
                 else:
@@ -119,7 +119,7 @@ class TableGenerator:
                                 pass
                             except ValueError:
                                 pass
-                            #print(vvs, vv)
+                            # print(vvs, vv)
                             if vv == vvs:
                                 flag = 1
                                 break
@@ -179,5 +179,3 @@ def randgentable(num=5, col=5, rownum=3, db='mysql'):
         ttypeonly = [t[0] for t in ttype]
         onlytypes.append(ttypeonly)
     return onlytypes, values, sql
-
-

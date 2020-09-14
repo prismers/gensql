@@ -1,13 +1,14 @@
 import unittest
+
+from sqlgen.gensql.genpredicate import genwherepred, genPredWithCol
 from sqlgen.gensql.gensimpleoracle import verifyEveryRow
 from sqlgen.gentable.randtable import randgentable
-from sqlgen.gensql.genpredicate import genwherepred, genPredWithCol
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.types, self. values, _ = randgentable(2, 5, 3)
+        self.types, self.values, _ = randgentable(2, 5, 3)
 
     def test_something(self):
         sqls = verifyEveryRow(self.values, self.types)

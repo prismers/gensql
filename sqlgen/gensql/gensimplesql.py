@@ -1,5 +1,5 @@
-import random
 import itertools
+import random
 
 from sqlgen.utilities.utility import genBiOp, genCol, genJoinType, formatJoin, genNaturalJoinType, getSelectTableNames, \
     getColNameFromId, getAliasColName
@@ -80,7 +80,6 @@ def genSelectWithJoin(types, colnum, joinnum, db='mysql'):
 
     sql = "select {} from {};"
     sqljohn = 'select {} from {} on {};'
-
 
     sqls = []
     n = 10
@@ -184,4 +183,3 @@ def getTablenameColname(tables):
 
     assert len(ids) == len(cols)
     return ids, cols
-

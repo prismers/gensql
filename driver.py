@@ -1,10 +1,9 @@
-import mysql.connector
-from sqlgen.utilities.utility import prettyprint
 import argparse
-import sqlite3
-
 import sys
 
+import mysql.connector
+
+from sqlgen.utilities.utility import prettyprint
 
 config = {
     "port": '4000',
@@ -42,7 +41,6 @@ if args.driver is not None:
 else:
     driver = 'mysql'
 
-
 try:
     if driver == 'mysql':
         prettyprint('*', 'Use MySQL connector')
@@ -68,5 +66,3 @@ try:
 
 except Exception:
     pass
-
-

@@ -1,9 +1,10 @@
 from time import sleep
 
-from sqlgen.mutatesql.mutateops import reverseBiOP
-from sqlgen.dbtype.typeenum import AggreFunc
-from .utility import getPredIsNULL
 import mysql.connector
+
+from sqlgen.dbtype.typeenum import AggreFunc
+from sqlgen.mutatesql.mutateops import reverseBiOP
+from .utility import getPredIsNULL
 
 
 def doMutate(cu, func, sql, orin, row, debug=False):
@@ -69,7 +70,6 @@ def doMutate(cu, func, sql, orin, row, debug=False):
         newnum = len(cu.fetchall())
         print("#row={} Reverse condition: {}".format(newnum, new)) if debug else None
 
-
         # if origin == newnum, the reverse may have no effect
         # if orin != newnum:
         orin += newnum
@@ -80,7 +80,7 @@ def doMutate(cu, func, sql, orin, row, debug=False):
             orin += nullnum
             if orin != row:
                 print('Mutation: correct rows should be #' + str(row) + ', get #' + str(orin), end='\n\n') if debug \
-                        else None
+                    else None
                 bug = 1
 
     # eliminate possible false-positives
@@ -204,6 +204,3 @@ def mutateAndTry(c, sql, err, row, debug=False):
 
         return 1
     return 0
-
-
-

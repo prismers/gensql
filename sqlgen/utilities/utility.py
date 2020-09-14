@@ -1,13 +1,14 @@
 import random
 
-from sqlgen.dbtype.typeenum import NumericFunctionType
-from sqlgen.dbtype.typeenum import BiOperatorType, LogicOperatorType, JoinType, NaturalJoinType
-
 import moz_sql_parser as parser
+
+from sqlgen.dbtype.typeenum import LogicOperatorType, NaturalJoinType
+from sqlgen.dbtype.typeenum import NumericFunctionType
+
 
 def castValueWithType(t, v, db):
     if db == 'mysql':
-        from sqlgen.dbtype.typeenum import NumericType,StringType, DateType
+        from sqlgen.dbtype.typeenum import NumericType, StringType, DateType
     if db == 'postgres':
         from sqlgen.dbtype.typeenumpsql import NumericType, StringType, DateType
 
@@ -131,8 +132,6 @@ def getPredIsNULL(sql, note='IS NULL'):
         else:
             subsql = sql
 
-
-
     # fix, drop limit, not effective
     select = subsql.replace(';', '').split('LIMIT')[0]
 
@@ -155,7 +154,6 @@ def getPredIsNULL(sql, note='IS NULL'):
     else:
         where = parsed[1].strip()
 
-
     # if not where.strip().startswith('(') or not where.strip().endswith(')'):
     #     where = '({})'.format(where)
 
@@ -164,7 +162,6 @@ def getPredIsNULL(sql, note='IS NULL'):
     concated = concated.replace('= TRUE', 'IS TRUE'.lower()).replace('= FALSE', 'IS FALSE'.lower())
     # print(concated)
     return concated
-
 
 
 def replaceJoinOn(select, where):

@@ -1,8 +1,9 @@
+import pyparsing
+from moz_sql_parser import parse, format
+
 from sqlgen.dbtype.typeenum import BiOpSwap, BiOperatorType, BiOpReverse, LogicOperatorType, LogicOperatorReverse, \
     NumericOpTypeMutator, NumericOpType, BiOpSimilar
 from sqlgen.utilities.utility import prettyprint
-import pyparsing
-from moz_sql_parser import parse, format
 
 
 def swap(tokens, key, item, oldtype=BiOperatorType, newtype=BiOpSwap):
@@ -88,7 +89,7 @@ def doit(sqls, func, oldtype=BiOperatorType, newtype=BiOpSwap):
 
         for key, item in tokens.items():
             # if key == 'where' or key == 'select' or key == 'on':
-                # if process when it is a sub-expression
+            # if process when it is a sub-expression
             res = doSwap(item, func, oldtype=oldtype, newtype=newtype)
             if res is not None:
                 tokens[key] = res
@@ -100,7 +101,7 @@ def doit(sqls, func, oldtype=BiOperatorType, newtype=BiOpSwap):
                     return [(sql, '')]
 
         if newsql != '':
-            eqpair.append((sql, newsql+';'))
+            eqpair.append((sql, newsql + ';'))
             # print(newsql)
     return eqpair
 

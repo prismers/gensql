@@ -1,6 +1,6 @@
 import random
-import uuid
-from sqlgen.utilities.utility import dropPart, changeToSelectAll
+
+from sqlgen.utilities.utility import dropPart
 
 
 # select num of views to create
@@ -35,4 +35,3 @@ def genView(ori, all=True, num=1, where=True, orderby=True, joincond=True):
     if all:
         return list(zip(dcvs, sqls, ori))
     return random.sample(list(zip(dcvs, sqls, ori)), num)
-

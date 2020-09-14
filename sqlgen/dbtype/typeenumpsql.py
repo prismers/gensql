@@ -14,6 +14,7 @@ class DataType(Enum):
     TIMESTAMP = 'TIMESTAMP'
     CHAR = 'CHAR'
     VARCHAR = 'VARCHAR'
+
     # BYTEA = 'BYTEA'
 
     def describe(self):
@@ -34,6 +35,7 @@ class NumericType(Enum):
 class StringType(Enum):
     CHAR = auto()
     VARCHAR = auto()
+
     # BYTEA = auto()
 
     def describe(self):
@@ -113,6 +115,7 @@ class LogicOperatorType(Enum):
     OR = 'OR'
     AND = 'AND'
     XOR = 'XOR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 
@@ -127,6 +130,7 @@ class LogicOperatorReverse(Enum):
     OR = 'OR 1 OR'
     AND = 'OR 1 OR'
     XOR = 'XOR 1 OR 1 OR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 
@@ -192,6 +196,7 @@ class DataValue(Enum):
     TIMESTAMP = ['1970-01-02 00:00:01', '1970-01-03 00:00:01', '1970-01-04 00:00:01']
     CHAR = 'char'
     VARCHAR = 'varchar'
+
     # BYTEA = 'BYTEA'
 
     def __init__(self, *arg):

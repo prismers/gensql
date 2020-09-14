@@ -1,7 +1,8 @@
+import random
 import unittest
+
 import sqlgen.gentable.randtable as randgen
 from sqlgen.gentable import genindex
-import random
 
 
 class MyTestCase(unittest.TestCase):

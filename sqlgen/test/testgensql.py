@@ -1,9 +1,10 @@
 import unittest
-from sqlgen.gensql.gensimplesql import genJoin, genSimpleSQL, genSelectWithJoin
-from sqlgen.utilities.utility import genCol
-from sqlgen.gentable.randtable import randgentable
+
 from sqlgen.dbtype.typeenum import DataType
+from sqlgen.gensql.gensimplesql import genJoin, genSimpleSQL, genSelectWithJoin
 from sqlgen.gensql.genview import genView
+from sqlgen.gentable.randtable import randgentable
+from sqlgen.utilities.utility import genCol
 
 
 class MyTestCase(unittest.TestCase):

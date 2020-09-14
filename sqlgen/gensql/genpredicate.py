@@ -1,6 +1,8 @@
 import random
-from sqlgen.utilities.utility import getTableNameFromId, getColNameFromId, extractValue, prettyformat, castValueWithType, genNumericRandFunc
+
 from sqlgen.dbtype.typeenum import LogicOperatorType, NumericOpType
+from sqlgen.utilities.utility import getTableNameFromId, getColNameFromId, extractValue, prettyformat, \
+    castValueWithType, genNumericRandFunc
 
 
 # random predicate with col, logic op, any values
@@ -110,8 +112,8 @@ def genwherepred(types, valuess, length, db='mysql'):
                     from sqlgen.dbtype.typeenum import DataType
                     if t is DataType.CHAR or t is DataType.VARCHAR \
                             or t is DataType.BLOB or t is DataType.TEXT:
-                            # or t is DataType.TIMESTAMP \
-                            # or t is DataType.DATE or t is DataType.DATETIME:
+                        # or t is DataType.TIMESTAMP \
+                        # or t is DataType.DATE or t is DataType.DATETIME:
                         continue
                 # rand `col op v`
                 randv = getRandValueFromType(t, db)

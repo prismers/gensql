@@ -106,6 +106,7 @@ class LogicOperatorType(Enum):
     OR = 'OR'
     AND = 'AND'
     XOR = 'XOR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 
@@ -120,6 +121,7 @@ class LogicOperatorReverse(Enum):
     OR = 'OR'
     AND = 'OR'
     XOR = 'OR'
+
     # ISNULL = 'is null'
     # ISNNULL = 'is not null'
 
